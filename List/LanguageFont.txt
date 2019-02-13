@@ -1,0 +1,2 @@
+English;25px 'Michroma';45
+日本語;25px 'Michroma';48
