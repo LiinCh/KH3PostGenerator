@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <title>KH3 Post Generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Michroma" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="outerwrap">
+        <div id="formmain">
+            <table class="formwrapper">
+                <tr class="topwrapper">
+                    <td class="topmenu"> <img src="images/resources/topleft.jpg" id="h1" crossorigin="Anonymous"></td>
+                    <td class="topmiddle"> <img src="images/resources/topmiddle.jpg" id="h2" crossorigin="Anonymous"></td>
+                    <td class="topmenu"> <img src="images/resources/topright.jpg" id="h3" crossorigin="Anonymous"></td>
+                </tr>
+                <tr class="infowrapper">
+                    <td colspan="3">
+                        <div class="infoinnerwrap">
+                            <table>
+                                <tr>
+                                    <td class="infoprofpic">&nbsp;</td>
+                                    <td>Generate Your Post</td>
+                                    <td class="infobuttons"> <img src="images/resources/menus.jpg" id="menu" crossorigin="Anonymous"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="imagewrapper">
+                    <td colspan="3"> <img id="picpost" src="#" alt="post" style="display:none" /></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="bodywrapper">
+                        <div id="form"> 
+							Language / 言語
+                            <select id="lan"></select>
+                            <br/>
+							Character / キャラクター
+                            <br/>
+                            <select id="frmchara"></select> 
+							<input type="button" value="Add Custom Character" onclick='$("#custom").css("display", "block")' />
+							Image / 画像
+							<br/>
+							<input type="radio" name="contentsel" id="contentsel1" onclick="ToggleInput('content', 1)" checked="checked" />
+							<label for="contentsel1">Upload</label>
+							<input type="radio" name="contentsel" id="contentsel2" onclick="ToggleInput('content', 2)" />
+							<label for="contentsel2">URL</label>
+							<br/>
+							<button id="contentimgbtn">Upload Image</button>
+                            <input type="file" id="contentimg" />
+							<input type="text" id="contenturl" style="display:none"/>
+							Message / メッセージ
+                            <br/>
+                            <textarea id="message" style="resize: none; height: 5em"></textarea>Tags / タグ
+                            <br/>
+                            <textarea id="tags" style="resize: none; height: 4em"></textarea>
+							<div id="commentform">
+							</div>
+							<input type="button" value="Add Comment" onclick='AddComment();' />
+                            <br/><input type="checkbox" id="exportbg" checked="checked"/> Export Background
+                        </div>
+                        <input type="button" value="Generate" onclick='generate();' />
+					</td>
+				</tr>
+			</table>
+		</div>
+    </div>
+    <div style="display:none;">
+		<img src="images/resources/bg.jpg" id="bg" crossorigin="Anonymous">
+		<img src="images/resources/hashtag.jpg" id="t" crossorigin="Anonymous">
+	</div>
+    <div id="preview" style="display:none;">
+        <div class="cover" onclick='$("#preview").css("display", "none")'>&nbsp;</div>
+        <div class="prvwrapper">
+			<div class="prvinnerwrap">
+				<div class="close" onclick='$("#preview").css("display", "none")'>X</div>
+				<input type="button" value="Download" onclick="Download()"/>
+				<canvas id="myCanvas" width="1920" height="1080;" onclick='$("#preview").css("display", "none")'>Your browser does not support the HTML5 canvas tag.</canvas>
+			</div>
+        </div>
+    </div>
+	<div id="custom" style="display:none;">
+        <div class="cover" onclick='$("#custom").css("display", "none")'>&nbsp;</div>
+		<div class="custwrapper">
+			<div class="close" onclick='$("#custom").css("display", "none")'>X</div>
+			<div class="custinnerwrap">
+				<div id="custform">
+					<div id="cform1">
+						<h3>Custom 1 &nbsp; <button onclick="RemoveChara(1)">x</button></h3>
+						Name
+						<input type="text" id="custname1" />
+						Avatar URL
+						<input type="text" id="custurl1" />
+					</div>
+				</div>
+				<input type="button" value="Add More" onclick='AddChara()' />
+				<input type="button" value="Update List" onclick='UpdateChara()' />
+			</div>
+		</div>
+	</div>
+    <script src="script.js"></script>
+</body>
+
+</html>
