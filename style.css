@@ -243,4 +243,7 @@ input[type="radio"] {
 		width: 100vw;
 		max-height: 85vh;
 	}
+	.prvdownload {
+		width: 75vw;
+	}
 }
