@@ -72,6 +72,13 @@ function Download() {
 	lnk.click();
 }
 
+//Change image upload button text to show uploaded file name
+function ChangeFile(id) {
+	var file = document.getElementById(id + 'img').files[0];
+	if (file != null) $('#' + id + 'imgbtn').val(file.name);
+	else $('#' + id + 'imgbtn').val('Upload Image');
+}
+
 function AddComment() {
 	//Increase comment counter by 1 and add new comment section
 	comment += 1;
@@ -109,7 +116,7 @@ function AddChara() {
 						  '<label for="cus' + custchara + 'sel2">URL</label>' +
 						  '<br/>' +
 						  '<input type="button" id="cus' + custchara + 'imgbtn" value="Upload Image">' +
-						  '<input type="file" id="cus' + custchara + 'img" />' +
+						  '<input type="file" id="cus' + custchara + 'img" onchange="ChangeFile(\'cus' + custchara + '\')"/>' +
 						  '<input type="text" id="cus' + custchara + 'url" style="display:none"/>' +
 						  '</div>');
 }
