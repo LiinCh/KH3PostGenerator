@@ -22,14 +22,21 @@ $.get('https://raw.githubusercontent.com/LiinCh/KH3PostGeneratorWeb/master/List/
     var characters = data.split("\n");
 	//iterate all lines
     for ( x = 0; x < characters.length; x++) {
-		//split line by semicolon
+		//split line by semicolon and set the key as 2nd field if filled or 1st field if not
 		var chars = characters[x].split(";");
+		if (chars.length < 5) continue;
+		var key = chars[1] != '' ? chars[1] : chars[0];
+		
 		//load data from file into associative array
-		charas[chars[0]] = [];
-		charas[chars[0]]["JP"] = chars[1];
-		charas[chars[0]]["File"] = chars[2];
-		//add loaded data to character drop down list
-		$('#frmchara').append("<option value='" + chars[0] + "'>" + chars[0] + "</option>");
+		charas[key] = [];
+		charas[key]["EN"] = chars[0];
+		charas[key]["JP"] = chars[2];
+		charas[key]["File"] = chars[4];
+		
+		//add loaded data according to default language to character drop down list
+		var lan = $('meta[name=language]').attr("content");
+		var chr = lan == "EN" ? (chars[1] != '' ? chars[1] : chars[0]) : (chars[3] != '' ? chars[3] : chars[2]);
+		$('#frmchara').append("<option value='" + key + "'>" + chr + "</option>");
     }
 }, 'text');
 
@@ -64,10 +71,11 @@ function ToggleInput(id, state) {
 	}
 }
 
-//Load canvas content to URL and initiate click to download the image
+//Load canvas content to URL and initiate click to download the image, set filename with date time to minimalize duplicate name
 function Download() {
-	var lnk = document.createElement('a'), e;
-	lnk.download = "load post";
+	var lnk = document.createElement('a'), e;	
+	var dt = new Date();
+	lnk.download = 'KH_' + dt.getFullYear() + (dt.getMonth()+1) + dt.getDate() + dt.getHours() + dt.getMinutes() + dt.getSeconds();
 	lnk.href = c.toDataURL("image/png;base64");
 	lnk.click();
 }
@@ -430,6 +438,10 @@ function loadavatar() {
 			var scale = this.width * (70 / this.height);
 			ctx.drawImage(this, scale / 2, 0, this.width - scale, this.height, wpad + this.pad, this.line, 70, 70);
 		}
+		else if (this.width = this.height)
+		{
+			ctx.drawImage(this, 0, 0, this.width, this.height, wpad + this.pad, this.line, 70, 70);
+		}
 		else
 		{
 			var scale = this.height * (70 / this.width);
@@ -448,6 +460,15 @@ function loadcontent() {
 	} else {
 		var scale = this.height - (this.width / 920 * 520);
 		ctx.drawImage(this, 0, scale / 2, this.width, this.height - scale, wpad, 185, 920, 520);
+	}
+	
+	//Draw watermark on top of content image if the field is filled
+	if ($('#watermark').val() != '') {
+		ctx.fillStyle = 'rgba(0,0,0,0.3)';
+		var width = ctx.measureText($('#watermark').val()).width + 10;
+		ctx.fillRect(wpad + 920 - width,185,width,35);
+		ctx.fillStyle = 'rgba(255,255,255,0.5)';
+		ctx.fillText($('#watermark').val(), wpad + (920 - width) + 5, 190);
 	}
 }
 
@@ -474,7 +495,7 @@ function getchara(id) {
 	{
 		if ($(id).val() != '???')
 		{
-			if ($('#lan').val().includes("English")) name = $(id).val();
+			if ($('#lan').val().includes("English")) name = charas[$(id).val()]["EN"];
 			else name = charas[$(id).val()]["JP"];
 		}
 		else name = $(id).val();
