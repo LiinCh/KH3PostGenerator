@@ -6,7 +6,7 @@ Ava;;アヴァ;;Ava.jpg
 Axel;;アクセル;;Axel.jpg
 Brain;;ブレイン;;Brain.jpg
 Chip;;チップ;;Chip.jpg
-Chirihy;;チリシィ;;Chirihy.jpg
+Chirihy;;チリシィ;;Chirithy.jpg
 Cid;;シド;;Cid.jpg
 Cloud;;クラウド;;Cloud.jpg
 Dale;;デール;;Dale.jpg
