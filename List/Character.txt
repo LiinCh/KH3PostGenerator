@@ -1,4 +1,4 @@
-﻿???;;???;;Unknown.jpg
+???;;???;;Unknown.jpg
 Aced;;アセッド;;Aced.jpg
 Aerith;;エアリス;;Aerith.jpg
 Aqua;;アクア;;Aqua.jpg
@@ -22,6 +22,7 @@ Ira;;イラ;;Ira.jpg
 Isa;;アイサ;;Isa.jpg
 Invi;;インヴィ;;Invi.jpg
 Kairi;;カイリ;;Kairi.jpg
+Larxene;;ラクシーヌ;;Larxene.jpg
 Lauriam;;ラーリアム;;Lauriam.jpg
 Lea;;リア;;Lea.jpg
 Lexaeus;;レクセウス;;Lexaeus.jpg
@@ -32,7 +33,6 @@ Mickey;;ミッキー;;Mickey.jpg
 Namine;;ナミネ;;Namine.jpg
 Olette;;オレット;;Olette.jpg
 Pence;;ピンツ;;Pence.jpg
-Larxene;;ラクシーヌ;;Larxene.jpg
 Riku;;リク;;Riku.jpg
 Roxas;;ロクサス;;Roxas.jpg
 Roxas;Roxas - Organization XIII;ロクサス;ロクサス 【13機関】;Roxas-Org.jpg
