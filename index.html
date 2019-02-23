@@ -51,7 +51,7 @@
 							<label for="contentsel2">URL</label>
 							<br/>
 							<input type="button" id="contentimgbtn" value="Upload Image">
-                            <input type="file" id="contentimg" />
+                            <input type="file" id="contentimg" onchange="ChangeFile('content')"/>
 							<input type="text" id="contenturl" style="display:none"/>
 							Message / メッセージ
                             <br/>
@@ -61,7 +61,8 @@
 							<div id="commentform">
 							</div>
 							<input type="button" value="Add Comment" onclick='AddComment();' />
-                            <br/><input type="checkbox" id="exportbg" checked="checked"/> Export Background
+                            <br/><input type="checkbox" name="exportbg"  id="exportbg" checked="checked" />
+							<label for="exportbg">Export Background</label>
                         </div>
                         <input type="button" value="Generate" onclick='generate();' />
 					</td>
@@ -100,7 +101,7 @@
 						<label for="cus1sel2">URL</label>
 						<br/>
 						<input type="button" id="cus1imgbtn" value="Upload Image">
-						<input type="file" id="cus1img" />
+						<input type="file" id="cus1img" onchange="ChangeFile('cus1')" />
 						<input type="text" id="cus1url" style="display:none"/>
 					</div>
 				</div>
