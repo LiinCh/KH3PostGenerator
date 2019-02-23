@@ -237,10 +237,10 @@ input[type="radio"] {
 		min-width: initial;
 	}
 	.custwrapper {
-		height: 100vh;
+		height: 95vh;
 	}
 	.prvwrapper {
 		width: 100vw;
-		height: 85vh;
+		max-height: 85vh;
 	}
 }
