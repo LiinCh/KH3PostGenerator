@@ -25,8 +25,8 @@ Kairi;;カイリ;;Kairi.jpg
 Larxene;;ラクシーヌ;;Larxene.jpg
 Lauriam;;ラーリアム;;Lauriam.jpg
 Lea;;リア;;Lea.jpg
-Lexaeus;;レクセウス;;Lexaeus.jpg
 Leon;;レオン;;Leon.jpg
+Lexaeus;;レクセウス;;Lexaeus.jpg
 Luxord;;ルクソード;;Luxord.jpg
 Marluxia;;マールーシャ;;Marluxia.jpg
 Mickey;;ミッキー;;Mickey.jpg
@@ -43,9 +43,9 @@ Strelitzia;;ストレリチア;;Strelitzia.jpg
 Terra;;テラ;;Terra.jpg
 Tifa;;ティファ;;Tifa.jpg
 Vanitas;;ヴァニタス;;Vanitas.jpg
-Vexen;;ヴィクセン;;Vexen.jpg
 Ventus;;ヴェントゥス;;Ventus.jpg
 Ventus;Ventus - UX;ヴェントゥス;ヴェントゥス 【UX】;Ventus-UX.jpg
+Vexen;;ヴィクセン;;Vexen.jpg
 Yuffie;;ユフィ;;Yuffie.jpg
 Xaldin;;ザルディン;;Xaldin.jpg
 Xemnas;;ゼムナス;;Xemnas.jpg
