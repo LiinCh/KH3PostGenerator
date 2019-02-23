@@ -1,0 +1,243 @@
+body {
+	background-image: url('Images/Resources/bg.jpg');
+	margin: 0;
+	font-family: 'Michroma', sans-serif
+}
+input, textarea, select, button {
+	font-family: 'Michroma', sans-serif;
+}
+input[type="radio"] {
+	margin-left: 3em;
+}
+
+#formmain {
+	width: 40vw;
+	min-width: 550px;
+	min-height: 100vh;
+	margin-left: auto;
+	margin-right: auto
+}
+
+#commentform, #commentform div {
+	padding: 0;
+}
+
+#commentform button, #custform button {
+	color: white;
+	background: darkgrey;
+	border-radius: 20px;
+}
+
+.outerwrap {
+	background-image: linear-gradient(to right, transparent, black, transparent)
+}
+
+.formwrapper {
+	width: 100%;
+	height: 100vh;
+	border-collapse: collapse
+}
+
+.formwrapper td {
+	padding: 0px !important
+}
+
+.topwrapper {
+	background: white;
+	height: 7vh;
+	min-height: 45px
+}
+
+.topmenu {
+	width: 7vh;
+	min-width: 45px;
+	height: 100%
+}
+
+.topmenu img {
+	height: 7vh;
+	min-height: 45px
+}
+
+.topmiddle {
+	height: 100%;
+	text-align: center
+}
+
+.topmiddle img {
+	height: 7vh;
+	min-height: 45px
+}
+
+.infowrapper {
+	height: 8vh;
+	min-height: 55px;
+	z-index: 50;
+	vertical-align: bottom;
+	padding: 0;
+	margin: 0;
+	border: none
+}
+
+.infoinnerwrap {
+	background: white;
+	height: 7vh;
+	min-height: 45px
+}
+
+.infoinnerwrap table {
+	border-collapse: collapse;
+	height: 100%;
+	width: 100%
+}
+
+.infoinnerwrap table td {
+	padding: 0px !important
+}
+
+.infoprofpic {
+	width: 10vh;
+	min-width: 65px;
+	height: 100%
+}
+
+.infobuttons {
+	width: 20vh;
+	min-width: 65px;
+	height: 100%;
+	text-align: right
+}
+
+.infobuttons img {
+	height: 7vh;
+	min-height: 45px
+}
+
+.bodywrapper {
+	height: 85vh;
+	background: white;
+	vertical-align: top
+}
+
+.bodywrapper div {
+	padding: 1em 2em 0 2em
+}
+
+.bodywrapper select,
+.bodywrapper input[type="text"],
+.bodywrapper input[type="file"],
+.bodywrapper input[type="button"],
+.bodywrapper textarea {
+	margin: 1em 2em 1em 2em;
+	width: 85%;
+}
+
+.bodywrapper input[type="file"] { 
+	margin-top: -3em; 
+	opacity: 0;
+}
+
+.cover {
+	background: white;
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	top: 0 !important;
+	opacity: 0.3
+}
+
+.close {
+	position: absolute;
+	z-index: 500;
+	color: darkgrey;
+	right: 10;
+	cursor: pointer;
+	font-size: 200%;
+}
+
+.prvwrapper {
+	position: fixed;
+	left: 50%;
+	top: 50% !important;
+	transform: translate(-50%, -55%);
+	box-shadow: 0 0 20px;
+	max-height: 90vh;
+	overflow-y: scroll;
+}
+
+.prvinnerwrap {
+	transform: scale(0.5, 0.5);
+}
+
+.prvwrapper canvas {
+	top: 0;
+	left: 0
+}
+
+.prvdownload {
+	font-size:125%;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 20px;
+	position: fixed;
+}
+
+.custwrapper {
+	position: fixed;
+	background: white;
+	border-radius: 20px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 20px;
+	height: 90vh;
+	width: 40vw;
+	min-width: 550px;
+	overflow-y: scroll;
+}
+
+.custinnerwrap {
+	padding: 1em 2em;
+	color: #777777;
+}
+
+.custinnerwrap input[type="text"] {
+	width: 90%;
+	margin: 0.5em 0 1em 2em;
+}
+
+.custinnerwrap input[type="button"] {
+	width: 100%;
+	margin-top: 1em;
+}
+
+.custinnerwrap input[type="file"] { 
+	margin-top: -2em; 
+	opacity: 0;
+}
+
+.custinnerwrap h3 {
+	font-size: 1em;
+	font-weight: normal;
+	color: black;
+}
+
+#custform {
+	border-bottom: solid 1px #777777;
+	padding-bottom: 1em;
+}
+
+@media (orientation: portrait) {
+	#formmain, .custwrapper {
+		width: 100vw;
+		min-width: initial;
+	}
+	.custwrapper {
+		height: 100vh;
+	}
+	.prvwrapper {
+		width: 100vw;
+		height: 85vh;
+	}
+}

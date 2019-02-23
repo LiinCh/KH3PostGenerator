@@ -29,7 +29,7 @@ $.get('https://raw.githubusercontent.com/LiinCh/KH3PostGeneratorWeb/master/List/
 		charas[chars[0]]["JP"] = chars[1];
 		charas[chars[0]]["File"] = chars[2];
 		//add loaded data to character drop down list
-		$('#frmchara').append("<option value='" + chars[0] + "'>" + chars[0] + (chars[1].length > 0? " / " + chars[1] : '') + "</option>");
+		$('#frmchara').append("<option value='" + chars[0] + "'>" + chars[0] + "</option>");
     }
 }, 'text');
 
@@ -64,9 +64,12 @@ function ToggleInput(id, state) {
 	}
 }
 
+//Load canvas content to URL and initiate click to download the image
 function Download() {
-	var img = c.toDataURL("image/png");
-    document.write('<img src="'+img+'"/>');
+	var lnk = document.createElement('a'), e;
+	lnk.download = "load post";
+	lnk.href = c.toDataURL("image/png;base64");
+	lnk.click();
 }
 
 function AddComment() {
@@ -97,7 +100,18 @@ function AddChara() {
 	$('#custform').append('<div id="cform' + custchara + '"><h3>Custom ' + custchara + ' &nbsp; ' + 
 						  '<button onclick="RemoveChara(' + custchara + ')">x</button>' + 
 						  '</h3>Name<input type="text" id="custname' + custchara + '" />' +
-						  'Avatar URL<input type="text" id="custurl' + custchara + '" /></div>');
+						  'Avatar<br/>' +
+						  '<input type="radio" name="cus' + custchara + 'sel" id="cus' + custchara + 'sel1" ' + 
+							'onclick="ToggleInput(\'cus' + custchara + '\', 1)" checked="checked" />' +
+						  '<label for="cus' + custchara + 'sel1">Upload</label>' +
+						  '<input type="radio" name="cus' + custchara + 'sel" id="cus' + custchara + 'sel2" ' + 
+							'onclick="ToggleInput(\'cus' + custchara + '\', 2)" />' +
+						  '<label for="cus' + custchara + 'sel2">URL</label>' +
+						  '<br/>' +
+						  '<input type="button" id="cus' + custchara + 'imgbtn" value="Upload Image">' +
+						  '<input type="file" id="cus' + custchara + 'img" />' +
+						  '<input type="text" id="cus' + custchara + 'url" style="display:none"/>' +
+						  '</div>');
 }
 function RemoveChara(id) {
 	if (custchara <= 1) {
@@ -205,11 +219,14 @@ function generate() {
 	ctx.fillStyle = "#555555";
 	ctx.fillRect(wpad, 185, 920, 520);
 	
-	//Create new image for post picture and draw it into canvas once it's loaded
+	//Create new image for post picture
 	var content = new Image();
 	content.crossOrigin = "Anonymous";
-	//content.src = $('#contenturl').val();
-	content.src = URL.createObjectURL(document.getElementById('contentimg').files[0]);
+	//If it's URL then set source to the URL, if not load uploaded image as URL data and set it as source
+	if($('#contenturl').css('display') != 'none') content.src = $('#contenturl').val();
+	else if (document.getElementById('contentimg').files[0] != null)
+		content.src = URL.createObjectURL(document.getElementById('contentimg').files[0]);
+	//Draw image into canvas once it's loaded
 	content.onload = loadcontent;
 	
 	//Write message into canvas
@@ -224,7 +241,6 @@ function generate() {
 	var tagwidth = wpad + 80;
 	var linecount = 1;
 	var tag;
-	
 	
 	for (var x = 0; x < tags.length; x++) {
 		//If the tag started with #, omit the first character. If it's empty, do not draw anything and go to next tag
@@ -272,7 +288,9 @@ function generate() {
 		ca.onload = loadavatar;
 		
 		//write the comment into canvas, put character name into the beginning of comment
-		line = loadmessage(line + (lineheight / 2), name + ' ' + $('#commentmessage' + x).val(), 170, wpad + 820, 2, true);
+		var newline = loadmessage(line + (lineheight / 2), name + ' ' + $('#commentmessage' + x).val(), 170, wpad + 820, 2, true);
+		if (newline - line < lineheight * 2.3) line += lineheight * 2.3;
+		else line = newline;
 	}
 	
 	//display the preview
@@ -319,9 +337,11 @@ function calculateheight() {
 			}
 		}
 	}
+	line += lineheight;
 	
 	//calculate comments height by simulating write process
 	for(var z = 1; z <= comment; z++) {
+		var newline = line + (lineheight / 2);
 		getchara('#commentchara' + z);
 		msgline = (name + ' ' + $('#commentmessage' + z).val()).split("\n");
 		
@@ -332,14 +352,15 @@ function calculateheight() {
 				if (x + 1 < msg.length) {
 					if (tagwidth + ctx.measureText(msg[x + 1]).width > 820) {
 						tagwidth = 170;
-						line += lineheight;
+						newline += lineheight;
 					}
 				}
 			}
 			tagwidth = 170;
-			line += lineheight;
+			newline += lineheight;
 		}
-		line += lineheight;
+		if (newline - line < lineheight * 2.3) line += lineheight * 2.3;
+		else line = newline;
 	}
 	
 	//if line height is too small, return default height
@@ -423,17 +444,25 @@ function loadcontent() {
 	}
 }
 
+//Get font from array
 function getfont() {
 	fontfam = fonts[$('#lan').val()]["Font"];
 	lineheight = parseInt(fonts[$('#lan').val()]["LineHeight"]);
 }
 
-function getchara(id) { 	
+//Get character name and avatar image
+function getchara(id) {
+	//Get the inputed value if it's custom character
 	if ($(id).val().includes('customchar')) 
 	{
-		name = $('#custname' + $(id).val().replace('customchar', '')).val();
-		prof = $('#custurl' + $(id).val().replace('customchar', '')).val();
+		var num = $(id).val().replace('customchar', '');
+		name = $('#custname' + num).val();
+		
+		if($('#cus' + num + 'url').css('display') != 'none') prof = $('#cus' + num + 'url').val();
+		else if (document.getElementById('cus' + num + 'img').files[0] != null)
+			prof = URL.createObjectURL(document.getElementById('cus' + num + 'img').files[0]);
 	}
+	//If it's not custom character then simply get the name and link from array
 	else 
 	{
 		if ($(id).val() != '???')
