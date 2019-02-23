@@ -34,7 +34,7 @@ Pence;;ピンツ;;Pence.jpg
 Larxene;;ラクシーヌ;;Larxene.jpg
 Riku;;リク;;Riku.jpg
 Roxas;;ロクサス;;Roxas.jpg
-Roxas;Roxas (Organization XIII);ロクサス;ロクサス 【13機関】;Roxas-Org.jpg
+Roxas;Roxas - Organization XIII;ロクサス;ロクサス 【13機関】;Roxas-Org.jpg
 Saix;;サイクス;;Saix.jpg
 Skuld;;スカルド;;Skuld.jpg
 Sora;;ソラ;;Sora.jpg
@@ -44,11 +44,11 @@ Tifa;;ティファ;;Tifa.jpg
 Vanitas;;ヴァニタス;;Vanitas.jpg
 Vexen;;ヴィクセン;;Vexen.jpg
 Ventus;;ヴェントゥス;;Ventus.jpg
-Ventus;Ventus (UX);ヴェントゥス;ヴェントゥス　【UX】;Ventus-UX.jpg
+Ventus;Ventus - UX;ヴェントゥス;ヴェントゥス 【UX】;Ventus-UX.jpg
 Yuffie;;ユフィ;;Yuffie.jpg
 Xaldin;;ザルディン;;Xaldin.jpg
 Xemnas;;ゼムナス;;Xemnas.jpg
 Xigbar;;ジグバル;;Xigbar.jpg
 Xion;;シオン;;Xion.jpg
-Xion;Xion (Organization XIII);シオン;シオン 【13機関】;Xion-Org.jpg
+Xion;Xion - Organization XIII;シオン;シオン 【13機関】;Xion-Org.jpg
 Zexion;;ゼクシオン;;Zexion.jpg
