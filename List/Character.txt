@@ -6,10 +6,11 @@ Ava;;アヴァ;;Ava.jpg
 Axel;;アクセル;;Axel.jpg
 Brain;;ブレイン;;Brain.jpg
 Chip;;チップ;;Chip.jpg
+Chirihy;;チリシィ;;Chirihy.jpg
 Cid;;シド;;Cid.jpg
-Demyx;;デミックス;;Demyx.jpg
 Cloud;;クラウド;;Cloud.jpg
 Dale;;デール;;Dale.jpg
+Demyx;;デミックス;;Demyx.jpg
 Donald;;ドナルド;;Donald.jpg
 Elrena;;エルレナ;;Elrena.jpg
 Ephemer;;エフェメラ;;Ephemer.jpg
