@@ -228,7 +228,7 @@ input[type="radio"] {
 	padding-bottom: 1em;
 }
 
-@media (orientation: portrait) {
+@media (max-aspect-ratio: 9/8) {
 	* {
 		font-size: 3vw;
 	}
