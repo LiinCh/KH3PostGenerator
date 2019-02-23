@@ -229,6 +229,9 @@ input[type="radio"] {
 }
 
 @media (orientation: portrait) {
+	* {
+		font-size: 3vw;
+	}
 	#formmain, .custwrapper {
 		width: 100vw;
 		min-width: initial;
