@@ -124,7 +124,6 @@ input[type="radio"] {
 }
 
 .bodywrapper select,
-.bodywrapper button,
 .bodywrapper input[type="text"],
 .bodywrapper input[type="file"],
 .bodywrapper input[type="button"],
@@ -160,7 +159,7 @@ input[type="radio"] {
 	position: fixed;
 	left: 50%;
 	top: 50% !important;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -55%);
 	box-shadow: 0 0 20px;
 	max-height: 90vh;
 	overflow-y: scroll;
@@ -175,13 +174,13 @@ input[type="radio"] {
 	left: 0
 }
 
-.prvwrapper input {
-	left: 2em;
-	bottom: 1em;
-	font-size: 2em;
-	margin: 0;
+.prvdownload {
+	font-size:125%;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	box-shadow: 0 0 20px;
-	position: absolute;
+	position: fixed;
 }
 
 .custwrapper {
@@ -213,8 +212,32 @@ input[type="radio"] {
 	margin-top: 1em;
 }
 
+.custinnerwrap input[type="file"] { 
+	margin-top: -2em; 
+	opacity: 0;
+}
+
 .custinnerwrap h3 {
 	font-size: 1em;
 	font-weight: normal;
 	color: black;
+}
+
+#custform {
+	border-bottom: solid 1px #777777;
+	padding-bottom: 1em;
+}
+
+@media (orientation: portrait) {
+	#formmain, .custwrapper {
+		width: 100vw;
+		min-width: initial;
+	}
+	.custwrapper {
+		height: 100vh;
+	}
+	.prvwrapper {
+		width: 100vw;
+		height: 85vh;
+	}
 }

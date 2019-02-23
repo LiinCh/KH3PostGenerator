@@ -2,6 +2,7 @@
 
 <head>
     <title>KH3 Post Generator</title>
+	<base href="https://liinch.github.io/KH3PostGeneratorWeb/">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Michroma" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -49,7 +50,7 @@
 							<input type="radio" name="contentsel" id="contentsel2" onclick="ToggleInput('content', 2)" />
 							<label for="contentsel2">URL</label>
 							<br/>
-							<button id="contentimgbtn">Upload Image</button>
+							<input type="button" id="contentimgbtn" value="Upload Image">
                             <input type="file" id="contentimg" />
 							<input type="text" id="contenturl" style="display:none"/>
 							Message / メッセージ
@@ -74,10 +75,10 @@
 	</div>
     <div id="preview" style="display:none;">
         <div class="cover" onclick='$("#preview").css("display", "none")'>&nbsp;</div>
+		<input type="button" class="prvdownload" value="Download" onclick="Download()"/>
         <div class="prvwrapper">
 			<div class="prvinnerwrap">
 				<div class="close" onclick='$("#preview").css("display", "none")'>X</div>
-				<input type="button" value="Download" onclick="Download()"/>
 				<canvas id="myCanvas" width="1920" height="1080;" onclick='$("#preview").css("display", "none")'>Your browser does not support the HTML5 canvas tag.</canvas>
 			</div>
         </div>
@@ -92,8 +93,15 @@
 						<h3>Custom 1 &nbsp; <button onclick="RemoveChara(1)">x</button></h3>
 						Name
 						<input type="text" id="custname1" />
-						Avatar URL
-						<input type="text" id="custurl1" />
+						Avatar<br/>
+						<input type="radio" name="cus1sel" id="cus1sel1" onclick="ToggleInput('cus1', 1)" checked="checked" />
+						<label for="cus1sel1">Upload</label>
+						<input type="radio" name="cus1sel" id="cus1sel2" onclick="ToggleInput('cus1', 2)" />
+						<label for="cus1sel2">URL</label>
+						<br/>
+						<input type="button" id="cus1imgbtn" value="Upload Image">
+						<input type="file" id="cus1img" />
+						<input type="text" id="cus1url" style="display:none"/>
 					</div>
 				</div>
 				<input type="button" value="Add More" onclick='AddChara()' />
