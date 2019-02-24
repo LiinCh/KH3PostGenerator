@@ -353,17 +353,21 @@ function calculateheight() {
 		}
 	}
 	line += lineheight;
+	tagwidth = 170;
 	
 	//calculate comments height by simulating write process
 	for(var z = 1; z <= comment; z++) {
 		var newline = line + (lineheight / 2);
+		var flag = true;
 		getchara('#commentchara' + z);
 		msgline = (name + ' ' + $('#commentmessage' + z).val()).split("\n");
 		
 		for (var y = 0; y < msgline.length; y++) {
 			var msg = msgline[y].trim().replace(/ +(?= )/g, '').split(" ");
 			for (var x = 0; x < msg.length; x++) {
+				if (flag) { msg[x] += ' '; flag = false; }
 				tagwidth += ctx.measureText(msg[x] + ' ').width;
+				
 				if (x + 1 < msg.length) {
 					if (tagwidth + ctx.measureText(msg[x + 1]).width > 820) {
 						tagwidth = 170;
@@ -397,7 +401,6 @@ function loadmessage(start, msg, pad, width, linecnt, startname) {
 	for (var y = 0; y < msgline.length; y++) {
 		//Split line by space
 		var msg = msgline[y].trim().replace(/ +(?= )/g, '').split(" ");
-		
 		//Iterate all words in line
 		for (var x = 0; x < msg.length; x++) {
 			//If message started with a name then set font color to grey, if it started with @ set it to blue, otherwise set as black
