@@ -14,10 +14,12 @@ Demyx;;デミックス;;Demyx.jpg
 Donald;;ドナルド;;Donald.jpg
 Elrena;;エルレナ;;Elrena.jpg
 Ephemer;;エフェメラ;;Ephemer.jpg
+Gladiolus;;グラディオラス;;Gladiolus.jpg
 Goofy;;グーフィー;;Goofy.jpg
 Gula;;グウラ;;Gula.jpg
 Hayner;;ハイネ;;Hayner.jpg
 Ienzo;;イエンツォ;;Ienzo.jpg
+Ignis;;イグニス;;Ignis.jpg
 Ira;;イラ;;Ira.jpg
 Isa;;アイサ;;Isa.jpg
 Invi;;インヴィ;;Invi.jpg
@@ -27,12 +29,15 @@ Lauriam;;ラーリアム;;Lauriam.jpg
 Lea;;リア;;Lea.jpg
 Leon;;レオン;;Leon.jpg
 Lexaeus;;レクセウス;;Lexaeus.jpg
+Lunafreya;;ルナフレーナ;;Lunafreya.jpg
 Luxord;;ルクソード;;Luxord.jpg
 Marluxia;;マールーシャ;;Marluxia.jpg
 Mickey;;ミッキー;;Mickey.jpg
 Namine;;ナミネ;;Namine.jpg
+Noctis;;ノクティス;;Noctis.jpg
 Olette;;オレット;;Olette.jpg
 Pence;;ピンツ;;Pence.jpg
+Prompto;;プロンプト;;Prompto.jpg
 Riku;;リク;;Riku.jpg
 Roxas;;ロクサス;;Roxas.jpg
 Roxas;Roxas - Organization XIII;ロクサス;ロクサス 【13機関】;Roxas-Org.jpg
@@ -52,4 +57,5 @@ Xemnas;;ゼムナス;;Xemnas.jpg
 Xigbar;;ジグバル;;Xigbar.jpg
 Xion;;シオン;;Xion.jpg
 Xion;Xion - Organization XIII;シオン;シオン 【13機関】;Xion-Org.jpg
+Yozora;;ヨゾラ;;Yozora.jpg
 Zexion;;ゼクシオン;;Zexion.jpg
