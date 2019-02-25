@@ -310,6 +310,12 @@ function generate() {
 	
 	//display the preview
 	$("#preview").css("display", "block");
+	
+	//Set download link to button
+	var lnk = document.getElementById('lnkdownload');
+	var dt = new Date();
+	lnk.download = 'KH_' + dt.getFullYear() + (dt.getMonth()+1) + dt.getDate() + dt.getHours() + dt.getMinutes() + dt.getSeconds();
+	lnk.href = c.toDataURL("image/png;base64");
 }
 
 //Function to calculate canvas height
