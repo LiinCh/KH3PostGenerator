@@ -316,6 +316,9 @@ function generate() {
 	var dt = new Date();
 	lnk.download = 'KH_' + dt.getFullYear() + (dt.getMonth()+1) + dt.getDate() + dt.getHours() + dt.getMinutes() + dt.getSeconds();
 	lnk.href = c.toDataURL("image/png;base64");
+	
+	var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+	if (iOS) lnk.target = '_blank';
 }
 
 //Function to calculate canvas height
